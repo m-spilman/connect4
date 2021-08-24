@@ -1,0 +1,101 @@
+@mixin borders($left-top: white, $right-bottom: hotpink) {
+  border-width: 2px;
+  border-style: solid;
+  border-right-color: $right-bottom;
+  border-bottom-color: $right-bottom;
+  border-left-color: $left-top;
+  border-top-color: $left-top;
+}
+
+.cells {
+  @include borders(#7b7b7b, white);
+
+  display: grid;
+  grid-template-rows: repeat(6, 0fr);
+  grid-template-columns: repeat(7, 0fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  @include borders(white, #999);
+  background-color: #c2c2c2;
+  padding: 16px;
+}
+.dropZone-player1 {
+  // margin-top: 15%;
+  display: grid;
+  grid-template-rows: repeat(7, 0fr);
+  grid-template-columns: repeat(6, 0fr);
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  display: flex;
+}
+.dropZone-player2 {
+  // margin-top: 15%;
+  display: grid;
+  grid-template-rows: repeat(7, 0fr);
+  grid-template-columns: repeat(6, 0fr);
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  display: flex;
+}
+
+.red {
+  background-image: url(../images/redCircle.png);
+  background-repeat: no-repeat;
+}
+.green {
+  background-image: url(../images/greenCircle.png);
+  background-repeat: no-repeat;
+}
+
+.dropZone-player1:hover {
+  background-image: url(../images/redHand.png);
+  background-repeat: no-repeat;
+}
+.dropZone-player2:hover {
+  background-image: url(../images/greenHand.png);
+  background-repeat: no-repeat;
+}
+
+.cell {
+  @include borders;
+  width: 95px;
+  height: 95px;
+  display: flex;
+
+  font-weight: bold;
+  background-color: black;
+}
+.player1 {
+  background-image: url(../images/redCircle.png);
+  background-repeat: no-repeat;
+  z-index: 7;
+}
+.player2 {
+  background-image: url(../images/greenCircle.png);
+  background-repeat: no-repeat;
+  z-index: 7;
+}
+.won {
+  background-color: blueviolet;
+}
+.gameOver {
+  pointer-events: none;
+}
+.reset {
+  color: hotpink;
+  background-color: black;
+  font-size: 22pt;
+  font-weight: bold;
+  width: 200px;
+  margin: auto;
+}
+.board {
+  display: grid;
+}
